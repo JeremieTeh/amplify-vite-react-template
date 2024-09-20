@@ -12,4 +12,4 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - name: Deploy
-        run: sh ./scripts/amplify-deploy.sh appdemo develop
+        run: sh ./scripts/amplify-deploy.sh d14l7d0s9hcgnu main
