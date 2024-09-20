@@ -5,7 +5,7 @@ on:
       environment:
         type: environment
         default: develop
-        required: true
+        required: false
 jobs:
   deploy:
       runs-on: ubuntu-latest
