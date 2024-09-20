@@ -1,11 +1,8 @@
-name: amplify demo deployment
 on:
+  release:
+      types: [published]
   workflow_dispatch:
-    inputs:
-      environment:
-        type: environment
-        default: develop
-        required: false
+  
 jobs:
   deploy:
       runs-on: ubuntu-latest
