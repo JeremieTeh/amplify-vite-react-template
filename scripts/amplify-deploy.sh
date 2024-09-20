@@ -4,8 +4,9 @@ echo "Release started"
 echo "Job ID is $JOB_ID"
 
 JOB_STATUS="$(aws amplify get-job --app-id $1 --branch-name $2 --job-id $JOB_ID | jq -r '.job.summary.status')"
- while [ "$JOB_STATUS" = "PENDING" -o "$JOB_STATUS" = "RUNNING" ]; do 
- aws amplify get-job --app-id $1 --branch-name $2 --job-id $JOB_ID 
+ while [ "$JOB_STATUS" = "RUNNING" -o "$JOB_STATUS" = "PENDIND" ]; do 
+ JOB_STATUS="$(aws amplify get-job --app-id $1 --branch-name $2 --job-id $JOB_ID | jq -r '.job.summary.status')"
+ echo "The Current Job is $JOB_STATUS"
  sleep 1; 
  done
 JOB_STATUS="$(aws amplify get-job --app-id $1 --branch-name $2 --job-id $JOB_ID | jq -r '.job.summary.status')"
