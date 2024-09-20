@@ -1,3 +1,4 @@
+name: amplify demo deployment
 on:
   workflow_dispatch:
     inputs:
