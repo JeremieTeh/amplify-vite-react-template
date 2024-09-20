@@ -1,4 +1,10 @@
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        default: develop
+        required: true
 jobs:
   deploy:
       runs-on: ubuntu-latest
